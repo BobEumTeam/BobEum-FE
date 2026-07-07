@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+:root {
+  --background: #fff7ed;
+  --foreground: #12352c;
+  --surface: #ffffff;
+  --accent: #047857;
+  --muted: #64746d;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  background: var(--background);
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgb(110 231 183 / 38%), transparent 34rem),
+    radial-gradient(circle at top right, rgb(251 146 60 / 22%), transparent 28rem),
+    linear-gradient(135deg, #fff7ed 0%, #f0fdf4 48%, #ecfdf5 100%),
+    var(--background);
+  color: var(--foreground);
+  font-family:
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgb(251 146 60 / 35%);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float-soft {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-1deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(1deg);
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgb(249 115 22 / 0.24);
+  }
+  50% {
+    box-shadow: 0 0 0 16px rgb(249 115 22 / 0);
+  }
+}
+
+@keyframes marker-pop {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.88);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 640ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-fade-up-delay-1 {
+  animation: fade-up 640ms cubic-bezier(0.22, 1, 0.36, 1) 90ms both;
+}
+
+.animate-fade-up-delay-2 {
+  animation: fade-up 640ms cubic-bezier(0.22, 1, 0.36, 1) 180ms both;
+}
+
+.animate-float-soft {
+  animation: float-soft 5.5s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2.4s ease-in-out infinite;
+}
+
+.animate-marker-pop {
+  animation: marker-pop 420ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.surface-card {
+  background: rgb(255 255 255 / 0.86);
+  border: 1px solid rgb(6 78 59 / 0.1);
+  box-shadow: 0 24px 70px rgb(15 23 42 / 0.08);
+  backdrop-filter: blur(18px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
