@@ -166,8 +166,8 @@ export function RankedFoodCard({ food, rank }: RankedFoodCardProps) {
         : "강아지·고양이";
 
   return (
-    <article className="brand-card animate-fade-up grid overflow-hidden transition hover:-translate-y-1 sm:grid-cols-[15rem_1fr]">
-      <div className="relative m-4 min-h-64 overflow-hidden rounded-[1.5rem] border-2 border-[var(--line)] bg-emerald-100 sm:min-h-[calc(100%-2rem)]">
+    <article className="brand-card animate-fade-up grid items-start overflow-hidden transition hover:-translate-y-1 sm:grid-cols-[15rem_1fr]">
+      <div className="relative m-4 aspect-square overflow-hidden rounded-[1.5rem] border-2 border-[var(--line)] bg-emerald-100 sm:aspect-auto sm:h-56">
         <Image
           alt={`${food.name} 사진`}
           className="object-cover"
